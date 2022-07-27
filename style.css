@@ -1,0 +1,105 @@
+html{
+    font-size: 62.5%;
+}
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f4a261;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    font-family: monospace;
+    background-color: #e76f51;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    letter-spacing: .5rem;
+}
+
+.drawing-area{
+    display: flex;
+    flex-flow: row wrap;
+    width: 60.6rem;
+    height: 60.6rem;
+    background-color: #fefae0;
+    border: black solid .3rem;
+}
+.wrapper{
+    height: 80rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+
+.sidebar{
+    height: 60.6rem;
+    width: 20.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: black solid .3rem;
+}
+
+label{
+    font-size: 2rem;
+}
+
+button{
+    width: 15rem;
+    border-radius: 1.5rem;
+    height: 5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: #264653;
+    color: white;
+    border: none;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    background-color: black;
+    border-radius: 1.5rem;
+    height: .8rem;
+    width: 15rem;
+    cursor: pointer;
+}
+
+input[type=color] {
+    width: 10rem;
+    height: 10rem; 
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+input[type=color]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+}
+
+button, input{
+    transition: transform 0.2s ease;
+}
+
+button:hover, input:hover{
+    transform: scale(1.1);
+}
+
+.active{
+    background-color: #e63946;
+}

@@ -1,6 +1,7 @@
 const DEFAULT_GRID_SIZE = 16;
 const DRAWING_SIZE = 60;
 let currentColor = "black";
+let previousColor = "";
 let drag = false;
 let erase = false;
 let mode = "color";
@@ -20,14 +21,17 @@ drawingArea.addEventListener("mouseup", checkDrag);
 drawingArea.addEventListener("mouseleave", checkDrag);
 slider.addEventListener("input", () => resetGrid(slider.value));
 newColor.addEventListener("change", (e) => currentColor = e.target.value);
-eraseButton.addEventListener("click", eraseGrid);
+eraseButton.addEventListener("click", (e) => {
+    activeButton(e);
+    mode = "erase";
+});
 clearButton.addEventListener("click", clearGrid);
 randomButton.addEventListener("click", (e) => {
     mode = "random";
     activeButton(e);
 })
 colorButton.addEventListener("click", (e) => {
-    mode = "color"
+    mode = "color";
     activeButton(e);
 })
 
@@ -71,15 +75,13 @@ function colorGrid(e) {
             let g = Math.ceil(Math.random() * 255);
             let b = Math.ceil(Math.random() * 255);
             e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-        }
-        else
+        } else if (mode === "color"){
             e.target.style.backgroundColor = currentColor;
-    }
-}
+        } else {
+            e.target.style.backgroundColor = "#fefae0"; 
+        }
 
-function eraseGrid(e){
-    currentColor = "#fefae0"
-    activeButton(e)
+    }
 }
 
 function clearGrid(){
@@ -99,7 +101,7 @@ function activeButton(e){
         eraseButton.classList.remove("active");
         colorButton.classList.remove("active");
     }
-    else{
+    else if (e.target === eraseButton){
         eraseButton.classList.add("active");
         colorButton.classList.remove("active");
         randomButton.classList.remove("active");

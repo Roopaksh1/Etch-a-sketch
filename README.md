@@ -14,8 +14,8 @@
 ### Features I Am Working On
 - Shading Button
 
-## Credits
+## Acknowledgements
 
-#### The Odin Project:
+- Made as a solution for the Etch-a-sketch project on [The Odin Project]
 
-Website : https://www.theodinproject.com Github : https://github.com/TheOdinProject/theodinproject
+[The Odin Project]: <https://www.theodinproject.com>
